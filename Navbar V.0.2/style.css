@@ -51,20 +51,21 @@ nav ul li a {
     font-size: 0.8em;
 }
 
+/* H A M B U R G E R - M E N U - B U T T O N - S T Y L I N G */
+
 #menu-btn {
     display: none;
 }
 
+/* Button's Middle Line */
 #hamburger-btn {
     position: relative;
     width: 30px;
     height: 0.1875em;
     background-color: rgba(0, 0, 0, 0.8);
-    transition: 0.3s;
-    -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
 }
 
+/* Button's Animation Duration Property - Creating and Colouring First and Last Lines */
 #hamburger-btn::before,
 #hamburger-btn::after {
     content: '';
@@ -75,17 +76,23 @@ nav ul li a {
     -moz-transition: transform 0.3s;
 }
 
+/* Button's First Line&Style */
 #hamburger-btn::before {
     top: -8px;
     width: 30px;
     height: 0.1875em;
 }
 
+/* Button's Last Line&Style */
 #hamburger-btn::after {
     bottom: -8px;
     width: 30px;
     height: 0.1875em;
 }
+
+/* H A M B U R G E R - M E N U - B U T T O N - S T Y L I N G */
+
+/* M E D I A - Q U E R Y - R E S P O N S I V E - D E S I G N */
 
 @media (max-width: 768px) {
     
@@ -106,23 +113,19 @@ nav ul li a {
     }
 
     #navigation.active {
+        left: 0;
+        width: 100%;
         transform: translateX(0);
         -webkit-transform: translateX(0);
         -moz-transform: translateX(0);
-        left: 0;
-        width: 100%;
     }
     
     #navigation ul {
-        position: relative;
         display: block;
         margin: 2rem 2rem;
     }
 
     #navigation ul li {
-        position: relative;
-        display: flex;
-        justify-content: start;
         margin: 1rem 1rem;
     }
 
@@ -136,16 +139,19 @@ nav ul li a {
         cursor: pointer;
     }
 
+    /* Button's Middle Line Transparent Style */
     #menu-btn.active #hamburger-btn {
         background-color: transparent;
     }
 
+    /* Button's First Line's Transform to / (X) button */
     #menu-btn.active #hamburger-btn::before {
         transform: translateY(8px) rotate(-45deg);
         -webkit-transform: translateY(8px) rotate(-45deg);
         -moz-transform: translateY(8px) rotate(-45deg)
     }
 
+    /* Button's Last Line's Transform to \ (X) button */
     #menu-btn.active #hamburger-btn::after {
         transform: translateY(-8px) rotate(45deg);
         -webkit-transform: translateY(-8px) rotate(45deg);
@@ -153,3 +159,5 @@ nav ul li a {
     }
     
 }
+
+/* M E D I A - Q U E R Y - R E S P O N S I V E - D E S I G N */
