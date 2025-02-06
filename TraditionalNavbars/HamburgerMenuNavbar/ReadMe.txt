@@ -1,0 +1,1 @@
+-- This is a simple traditional responsive navbar with user interaction and hamburger menu

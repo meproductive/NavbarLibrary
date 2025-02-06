@@ -1,4 +1,4 @@
-/* ------------------ G L O B A L  T A G S ------------------ */
+/* ----------------- G L O B A L - T A G S ----------------- */
 
 * {
     margin: 0;
@@ -27,16 +27,26 @@ html, li, a {
     align-items: center;
 }
 
+.d-flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.box-shadow-5-03 {
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
 #underline {
     text-decoration: underline;
 }
 
-/* ------------------ G L O B A L  T A G S ------------------ */
+/* ----------------- G L O B A L - T A G S ----------------- */
+
+/* ----------------- H E A D E R ----------------- */
 
 header {
     justify-content: space-around;
     padding: 2rem 2rem;
-    box-shadow: 0px 0px 5px 0px;
 }
 
 nav ul {
@@ -44,11 +54,39 @@ nav ul {
 }
 
 nav ul li {
-    padding: 0 1rem;
+    margin: 0 1rem;
 }
 
 nav ul li a {
     font-size: 0.8em;
+}
+
+/* D R O P D O W N - U S E R - I C O N - S T Y L I N G */
+
+#dropdown {
+    position: relative;
+}
+
+#dropdown-container {
+    position: absolute;
+    display: none;
+    left: -3rem;
+}
+
+#dropdown:hover #dropdown-container {
+    display: block;
+}
+
+#dropdown-items-wrap {
+    width: 120px;
+    margin: 1rem 0 0 0;
+    background-color: rgba(251, 251, 251, 0.9);
+    border-radius: 5px;
+}
+
+.dropdown-li-item {
+    margin: auto;
+    padding: 1rem 1rem;
 }
 
 /* H A M B U R G E R - M E N U - B U T T O N - S T Y L I N G */
@@ -61,7 +99,7 @@ nav ul li a {
 #hamburger-btn {
     position: relative;
     width: 30px;
-    height: 0.1875em;
+    height: 0.1875rem;
     background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -80,14 +118,14 @@ nav ul li a {
 #hamburger-btn::before {
     top: -8px;
     width: 30px;
-    height: 0.1875em;
+    height: 0.1875rem;
 }
 
 /* Button's Last Line&Style */
 #hamburger-btn::after {
     bottom: -8px;
     width: 30px;
-    height: 0.1875em;
+    height: 0.1875rem;
 }
 
 /* H A M B U R G E R - M E N U - B U T T O N - S T Y L I N G */
@@ -105,11 +143,11 @@ nav ul li a {
         height: 100%;
         transform: translateX(100%);
         -webkit-transform: translateX(100%);
-        -moz-transform: translateX(100%); 
+        -moz-transform: translateX(100%);
         transition: transform 0.3s;
         -webkit-transition: transform 0.3s;
         -moz-transition: transform 0.3s;
-        background-color: #f7f7f7;
+        background-color: rgb(249, 249, 249);;
     }
 
     #navigation.active {
@@ -131,6 +169,15 @@ nav ul li a {
 
     #navigation ul li a {
         font-size: 1em;
+    }
+
+    #user-dropdown-icon {
+        display: none;
+    }
+
+    #dropdown-container {
+        display: flex;
+        z-index: 999;
     }
 
     #menu-btn {
@@ -161,3 +208,5 @@ nav ul li a {
 }
 
 /* M E D I A - Q U E R Y - R E S P O N S I V E - D E S I G N */
+
+/* ----------------- H E A D E R ----------------- */

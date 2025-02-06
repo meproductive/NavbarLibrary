@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <title>Navbar V.0.3</title>
+    </head>
+
+    <body>
+
+        <header class="flex-items-center box-shadow-5-03">
+
+            <h1>TITLE</h1>
+
+            <nav class="d-flex" id="navigation">
+                <ul class="d-flex">
+                    <li>
+                        <a href="#" id="underline">HOME</a>
+                    </li>
+                    <li>
+                        <a href="#">ABOUT ME</a>
+                    </li>
+                    <li>
+                        <a href="#">BLOG</a>
+                    </li>
+                    <li>
+                        <a href="#">CONTACT</a>
+                    </li>
+                    <li id="dropdown">
+                        <i class="fa-solid fa-user" id="user-dropdown-icon">
+                            <ul id="dropdown-container">
+                                <div class="box-shadow-5-03" id="dropdown-items-wrap">
+                                    <li class="dropdown-li-item">
+                                        <a href="#">
+                                            <i class="fa-solid fa-user-plus" ></i>
+                                            SIGN UP
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-li-item">
+                                        <a href="#">
+                                            <i class="fa-solid fa-right-to-bracket"></i>
+                                            LOG IN
+                                        </a>
+                                    </li>
+                                </div>
+                            </ul>
+                        </i>
+                    </li>
+                </ul>
+            </nav>
+            <i id="menu-btn" class="d-flex a-items-center"><span id="hamburger-btn"></span></i>
+        </header>
+
+        <script src="navbarV.0.3.js"></script>
+
+    </body>
+
+</html>

@@ -2,8 +2,7 @@
 const navigation = document.getElementById("navigation");
 const menubtn = document.getElementById("menu-btn");
 
-//If statement querying if we have these variables then function supposed to work
-if (navigation && menubtn) {
+    //Function Declaration ES6+
     const openFunc = () => {
         navigation.classList.toggle('active');
         menubtn.classList.toggle('active');
@@ -11,5 +10,3 @@ if (navigation && menubtn) {
 
   //EVENTLISTENER on click function 
   menubtn.addEventListener('click', openFunc);
-     
-};
