@@ -8,6 +8,8 @@
         <link rel="stylesheet" href="style.css" type="text/css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+        <script src="navbarV.0.3.js" defer async></script>
+
         <title>Navbar V.0.3</title>
     </head>
 
@@ -18,7 +20,13 @@
             <h1>TITLE</h1>
 
             <nav class="d-flex" id="navigation">
-                <ul class="d-flex">
+                <ul class="flex-items-center">
+                    <li id="search">
+                        <form action="#" class="flex-items-center" id="search-form">
+                            <input type="text" class="inp" id="search-input">
+                            <button type="submit" id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </form>
+                    </li>
                     <li>
                         <a href="#" id="underline">HOME</a>
                     </li>
@@ -55,8 +63,6 @@
             </nav>
             <i id="menu-btn" class="d-flex a-items-center"><span id="hamburger-btn"></span></i>
         </header>
-
-        <script src="navbarV.0.3.js"></script>
 
     </body>
 

@@ -61,6 +61,36 @@ nav ul li a {
     font-size: 0.8em;
 }
 
+/* S E A R C H - I N P U T - B U T T O N - S T Y L I N G */
+
+#search {
+    position: relative;
+}
+
+#search-input {
+    width: 250px;
+    height: 25px;
+    padding: 0 0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+#search-input:focus {
+    outline: 1px solid rgba(0, 0, 0, 0.8);
+}
+
+#search-btn {
+    position: absolute;
+    right: 0.3rem;
+    padding: 0 0.1rem 0 0.2rem;
+    cursor: pointer;
+    border: none;
+    border-left: 1px solid rgba(0, 0, 0, 0.3) !important;
+    background-color: transparent;
+}
+
+/* S E A R C H - I N P U T - B U T T O N - S T Y L I N G */
+
 /* D R O P D O W N - U S E R - I C O N - S T Y L I N G */
 
 #dropdown {
