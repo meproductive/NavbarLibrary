@@ -18,22 +18,29 @@ html, li, a {
     display: flex;
 }
 
-.a-items-center {
-    align-items: center;
-}
-
 .flex-items-center {
     display: flex;
     align-items: center;
 }
 
-.d-flex-column {
-    display: flex;
-    flex-direction: column;
-}
-
 .box-shadow-5-03 {
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.p-relative {
+    position: relative;
+}
+
+.p-absolute {
+    position: absolute;
+}
+
+.c-pointer {
+    cursor: pointer;
+}
+
+.d-none {
+    display: none;
 }
 
 #underline {
@@ -63,23 +70,14 @@ nav ul li a {
 
 /* S E A R C H - I N P U T - B U T T O N - S T Y L I N G */
 
-#search-form {
-    position: relative;
-}
-
-#search-form input[type=text] {
-    display: none;
-}
-
 #search-input {
+    width: 250px;
     height: 25px;
-    padding: 0 0.5rem;
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-}
-
-#search-input.active {
-    width: 200px;
+    padding: 0.3rem 2rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    border-right: none;
+    border-left: none;
 }
 
 #search-input:focus {
@@ -87,32 +85,29 @@ nav ul li a {
 }
 
 #search-btn {
-    position: absolute;
     align-self: center;
-    cursor: pointer;
     border: none;
     background-color: transparent;
+}
+
+#search-btn.active {
+    padding: 0 0.3rem;
+    border-right: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 #close-btn {
     display: none;
 }
 
-.primary-nav-item.none {
-    display: none;
+#close-btn.active {
+    margin: 0 0 0 0.3rem;
 }
 
 /* S E A R C H - I N P U T - B U T T O N - S T Y L I N G */
 
 /* D R O P D O W N - U S E R - I C O N - S T Y L I N G */
 
-#dropdown {
-    position: relative;
-}
-
 #dropdown-container {
-    position: absolute;
-    display: none;
     left: -3rem;
 }
 
@@ -135,12 +130,11 @@ nav ul li a {
 /* H A M B U R G E R - M E N U - B U T T O N - S T Y L I N G */
 
 #menu-btn {
-    display: none;
+    align-items: center;
 }
 
 /* Button's Middle Line */
 #hamburger-btn {
-    position: relative;
     width: 30px;
     height: 0.1875rem;
     background-color: rgba(0, 0, 0, 0.8);

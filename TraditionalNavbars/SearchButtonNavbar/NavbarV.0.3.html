@@ -21,31 +21,37 @@
             <h1>TITLE</h1>
 
             <nav class="d-flex" id="navigation">
-                <ul class="flex-items-center">
-                    <li class="primary-nav-item">
+                <ul class="flex-items-center" id="parent">
+                    
+                    <!-- PRIMARY NAV ITEMS -->
+                    <li class="primary-nav-item" id="first-li-item">
                         <a href="#" id="underline">HOME</a>
                     </li>
-                    <li class="primary-nav-item">
+                    <li class="primary-nav-item" id="second-li-item">
                         <a href="#">ABOUT ME</a>
                     </li>
-                    <li class="primary-nav-item">
+                    <li class="primary-nav-item" id="third-li-item">
                         <a href="#">BLOG</a>
                     </li>
-                    <li class="primary-nav-item">
+                    <li class="primary-nav-item" id="fourth-li-item">
                         <a href="#">CONTACT</a>
                     </li>
+
+                    <!-- SEARCH ELEMENTS -->
                     <li id="search">
-                        <form action="#" class="flex-items-center" id="search-form">
-                            <input type="text" class="inp" id="search-input">
-                            <button type="submit" id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-                            <i class="fa-solid fa-x" id="close-btn"></i>
+                        <form action="#" class="flex-items-center p-relative" id="search-form">
+                            <input type="text" class="d-none" id="search-input">
+                            <button type="submit" class="p-absolute c-pointer" id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            <i class="fa-solid fa-x c-pointer" id="close-btn"></i>
                         </form>
                     </li>
-                    <li id="dropdown">
+
+                    <!-- DROPDOWN ELEMENTS -->
+                    <li class="p-relative" id="dropdown">
                         
                         <!--Dropdown User Button-->
                         <i class="fa-solid fa-user" id="user-dropdown-icon">
-                            <ul id="dropdown-container">
+                            <ul class="p-absolute d-none" id="dropdown-container">
                                 <div class="box-shadow-5-03" id="dropdown-items-wrap">
                                     <li class="dropdown-li-item">
                                         <a href="#">
@@ -66,7 +72,7 @@
                     </li>
                 </ul>
             </nav>
-            <i id="menu-btn" class="d-flex a-items-center"><span id="hamburger-btn"></span></i>
+            <i class="d-none" id="menu-btn" ><span class="p-relative" id="hamburger-btn"></span></i>
         </header>
 
     </body>

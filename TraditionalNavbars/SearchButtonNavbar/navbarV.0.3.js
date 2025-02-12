@@ -11,21 +11,30 @@ const menubtn = document.getElementById('menu-btn');
   //EVENTLISTENER on click function 
   menubtn.addEventListener('click', hamburgerMenu);
 
- //Search button's dom declaration
+ //Buttons's & input's dom declarations
  const searchbtn = document.getElementById('search-btn');
  const closebtn = document.getElementById('close-btn');
  const searchinput = document.getElementById('search-input');
- const primaryNavitem = document.querySelectorAll('primary-nav-item');
-
+ 
     const openSearchinput = () => {
+
         searchinput.classList.add('active');
         searchinput.style.display = 'flex';
+
+        searchbtn.classList.add('active');
         searchbtn.style.float = 'left';
+
         closebtn.style.display = 'flex';
+        closebtn.classList.add('active');
+
     };
 
     const closeSearchinput = () => {
-        closebtn.classList.remove('active');
+
+        closebtn.style.display = 'none';
+        searchinput.style.display = 'none';
+        searchbtn.classList.remove('active');
+        
     }
 
     searchbtn.addEventListener('click', openSearchinput);
