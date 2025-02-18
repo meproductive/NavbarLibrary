@@ -15,25 +15,29 @@ const menubtn = document.getElementById('menu-btn');
  const searchbtn = document.getElementById('search-btn');
  const closebtn = document.getElementById('close-btn');
  const searchinput = document.getElementById('search-input');
- 
+ const parentt = document.getElementById('parent').children;
+
     const openSearchinput = () => {
 
         searchinput.classList.add('active');
-        searchinput.style.display = 'flex';
-
         searchbtn.classList.add('active');
-        searchbtn.style.float = 'left';
-
-        closebtn.style.display = 'flex';
         closebtn.classList.add('active');
+
+        for (let i = 0; i < 4; i++){
+            parentt[i].style.display = 'none';
+        }
 
     };
 
     const closeSearchinput = () => {
 
-        closebtn.style.display = 'none';
-        searchinput.style.display = 'none';
+        closebtn.classList.remove('active');
+        searchinput.classList.remove('active');
         searchbtn.classList.remove('active');
+
+        for (let i = 0; i < 4; i++){
+            parentt[i].style.display = 'flex';
+        }
         
     }
 
