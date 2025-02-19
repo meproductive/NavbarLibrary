@@ -70,6 +70,8 @@ nav ul li a {
 
 /* S E A R C H - I N P U T - B U T T O N - S T Y L I N G */
 
+/* Input and buttons styling */
+
 #search-input {
     display: none;
     width: 0;
@@ -89,7 +91,9 @@ nav ul li a {
 #close-btn {
     display: none;
 }
+/* Input and buttons styling */
 
+/* Input and buttons active cases */
 #search-input.active {
     display: flex;
     width: 250px;
@@ -112,6 +116,7 @@ nav ul li a {
     margin: 0 0 0 0.3rem;
     padding: 0 0.2rem;
 }
+/* Input and buttons active cases */
 
 /* S E A R C H - I N P U T - B U T T O N - S T Y L I N G */
 
