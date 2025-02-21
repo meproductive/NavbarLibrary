@@ -1,1 +1,1 @@
--- This is the easiest responsive navbar with no media queries - The fact no one is going to use it but I wrote it anyway.
+-- This is the easiest responsive navbar with no media queries.
