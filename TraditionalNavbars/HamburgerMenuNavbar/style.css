@@ -27,10 +27,6 @@ html, li, a {
     align-items: center;
 }
 
-#underline {
-    text-decoration: underline;
-}
-
 /* ------------------ G L O B A L  T A G S ------------------ */
 
 header {
@@ -49,6 +45,54 @@ nav ul li {
 
 nav ul li a {
     font-size: 0.8em;
+}
+
+/* Primary navigation items hover animation */
+.primary-a-items {
+    position: relative;
+}
+
+.primary-a-items::before {
+    content: "";
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    bottom: 0;
+    inset: calc(100% - 1px) 0 0 0;
+    transition: scale 0.5s;
+    -webkit-transition: scale 0.5s;
+    -moz-transition: scale 0.5s;
+    scale: 0 1;
+}
+
+.primary-a-items:hover::before {
+    scale: 1;
+}
+
+/* Sign up - Log in buttons hover animation */
+.secondary-a-items {
+    position: relative;
+    background-color: #ffffff;
+    padding: 0.2rem 0;
+
+}
+
+.icon-hidden {
+    position: absolute;
+    z-index: -1;
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    transition: transform 0.5s;
+    -webkit-transition: transform 0.5s;
+    -moz-transition: transform 0.5s;
+}
+
+.secondary-a-items:hover .icon-hidden {
+    left: -1rem;
+    top: 15%;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
 }
 
 /* H A M B U R G E R - M E N U - B U T T O N - S T Y L I N G */
@@ -131,6 +175,10 @@ nav ul li a {
 
     #navigation ul li a {
         font-size: 1em;
+    }
+
+    .secondary-a-items {
+        background-color: #f7f7f7;
     }
 
     #menu-btn {
