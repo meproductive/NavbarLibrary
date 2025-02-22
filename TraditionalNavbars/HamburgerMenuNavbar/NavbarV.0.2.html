@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         
         <!-- JAVASCRIPT -->
-        <script src="navbarV.0.2.js" defer async></script>
+        <script src="navbarV.0.2.js" type="text/javascript" defer async></script>
 
         <title>Navbar V.0.2</title>
     </head>
@@ -21,13 +21,13 @@
             <h1>TITLE</h1>
             
             <nav class="d-flex" id="navigation">
-                <ul class="d-flex">
+                <ul class="d-flex" id="primary-navigation">
                     <li><a href="#" class="primary-a-items">HOME</a></li>
                     <li><a href="#" class="primary-a-items">ABOUT ME</a></li>
                     <li><a href="#" class="primary-a-items">BLOG</a></li>
                     <li><a href="#" class="primary-a-items">CONTACT</a></li>
                 </ul>
-                <ul class="d-flex">
+                <ul class="d-flex" id="user-navigation">
 
                     <li>
                         <a href="#" class="secondary-a-items">
@@ -44,7 +44,7 @@
 
                 </ul>
             </nav>
-            <i id="menu-btn" class="d-flex a-items-center"><span id="hamburger-btn"></span></i>
+            <i id="menu-btn" class="flex-items-center"><span id="hamburger-btn"></span></i>
         </header>
         
     </body>

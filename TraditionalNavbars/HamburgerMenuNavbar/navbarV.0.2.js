@@ -8,5 +8,5 @@ const menubtn = document.getElementById("menu-btn");
         menubtn.classList.toggle('active');
     };
 
-  //EVENTLISTENER on click function 
+  //EVENTLISTENER on click function
   menubtn.addEventListener('click', hamburgerMenu);

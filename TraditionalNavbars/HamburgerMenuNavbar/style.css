@@ -18,10 +18,6 @@ html, li, a {
     display: flex;
 }
 
-.a-items-center {
-    align-items: center;
-}
-
 .flex-items-center {
     display: flex;
     align-items: center;
@@ -29,22 +25,39 @@ html, li, a {
 
 /* ------------------ G L O B A L  T A G S ------------------ */
 
+/* ------------------ P A G E ' S - H E A D E R ------------------ */
+
 header {
     justify-content: space-around;
     padding: 2rem 2rem;
-    box-shadow: 0px 0px 5px 0px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
 }
 
 nav ul {
     justify-content: center;
 }
 
-nav ul li {
-    padding: 0 1rem;
-}
-
 nav ul li a {
     font-size: 0.8em;
+}
+
+/* Primary Navigation & items styling */
+#primary-navigation {
+    padding: 0 1rem 0 0; /* primary navigation container's right padding */
+}
+
+#primary-navigation li {
+    padding: 0 1rem; /* primary li items right - left padding */
+}
+
+/* Secondary Navigation & items styling */
+#user-navigation {
+    padding: 0 0 0.1rem 1rem; /* secondary user navigation container's bottom - left padding */
+    border-left: 1px solid rgba(0, 0, 0, 0.3); /* line between navigations */
+}
+
+#user-navigation li {
+    padding: 0 0.7rem; /* secondary li items right - left padding */
 }
 
 /* Primary navigation items hover animation */
@@ -57,11 +70,11 @@ nav ul li a {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.8);
     bottom: 0;
-    inset: calc(100% - 1px) 0 0 0;
+    inset: calc(100% - 1px) 0 0 0; /* gives 1px line */
     transition: scale 0.5s;
     -webkit-transition: scale 0.5s;
     -moz-transition: scale 0.5s;
-    scale: 0 1;
+    scale: 0 0; /* gives fade effect */
 }
 
 .primary-a-items:hover::before {
@@ -73,7 +86,6 @@ nav ul li a {
     position: relative;
     background-color: #ffffff;
     padding: 0.2rem 0;
-
 }
 
 .icon-hidden {
@@ -82,9 +94,9 @@ nav ul li a {
     transform: translateX(100%);
     -webkit-transform: translateX(100%);
     -moz-transform: translateX(100%);
-    transition: transform 0.5s;
-    -webkit-transition: transform 0.5s;
-    -moz-transition: transform 0.5s;
+    transition: transform 0.3s;
+    -webkit-transition: transform 0.3s;
+    -moz-transition: transform 0.3s;
 }
 
 .secondary-a-items:hover .icon-hidden {
@@ -169,16 +181,43 @@ nav ul li a {
         margin: 2rem 2rem;
     }
 
+    #navigation ul:first-child {
+        margin-bottom: 0;
+    }
+
     #navigation ul li {
         margin: 1rem 1rem;
+        padding: 0 1rem;
+    }
+
+    #navigation ul li:first-child {
+        margin-top: 0.5rem;
     }
 
     #navigation ul li a {
         font-size: 1em;
     }
 
+    #primary-navigation {
+        width: 200px;
+    }
+
+    #user-navigation {
+        border: none;
+        width: 200px;
+        padding: 0;        
+    }
+
+    .primary-a-items::before {
+        inset: 100%;
+    }
+
     .secondary-a-items {
         background-color: #f7f7f7;
+    }
+
+    .secondary-a-items:hover .icon-hidden {
+        display: none;
     }
 
     #menu-btn {
@@ -209,3 +248,5 @@ nav ul li a {
 }
 
 /* M E D I A - Q U E R Y - R E S P O N S I V E - D E S I G N */
+
+/* ------------------ P A G E ' S - H E A D E R ------------------ */
