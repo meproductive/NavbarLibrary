@@ -247,14 +247,14 @@ nav ul li a {
     #menu-btn.active #hamburger-btn::before {
         transform: translateY(8px) rotate(-45deg);
         -webkit-transform: translateY(8px) rotate(-45deg);
-        -moz-transform: translateY(8px) rotate(-45deg)
+        -moz-transform: translateY(8px) rotate(-45deg);
     }
 
     /* Button's Last Line's Transform to \ (X) button */
     #menu-btn.active #hamburger-btn::after {
         transform: translateY(-8px) rotate(45deg);
         -webkit-transform: translateY(-8px) rotate(45deg);
-        -moz-transform: translateY(-8px) rotate(45deg)
+        -moz-transform: translateY(-8px) rotate(45deg);
     }
     
 }

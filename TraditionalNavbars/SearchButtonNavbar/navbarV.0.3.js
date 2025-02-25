@@ -19,7 +19,7 @@ const menubtn = document.getElementById('menu-btn');
  // ul tag's parent id's dom declaration
  const parentt = document.getElementById('parent').children;
  // matched media screen size min-width 768px passes to variable
- const primaryItems = window.matchMedia('(min-width: 768px)');
+ const primaryItems = window.matchMedia('(min-width: 769px)');
 
     const openSearchinput = () => {
 
@@ -49,7 +49,23 @@ const menubtn = document.getElementById('menu-btn');
         }
         
     }
+    
+    // Function to handle screen resize
+    const handleResize = () => {
+        // If the screen size is less than 768px, close the search input
+        if (!primaryItems.matches) {
+            closeSearchinput();
+        } 
+        else {
+            // Else the screen size is 768px or more close the search input anyway    
+            closeSearchinput();
+        }
+
+    }
 
     // EVENTLISTENER on click functions
     searchbtn.addEventListener('click', openSearchinput);
     closebtn.addEventListener('click', closeSearchinput);
+
+    // Add resize EVENTLISTENER to handle screen size changes
+    window.addEventListener('resize', handleResize);
