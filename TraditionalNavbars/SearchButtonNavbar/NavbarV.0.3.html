@@ -24,25 +24,25 @@
                 <ul class="flex-items-center" id="parent">
                     
                     <!-- PRIMARY NAV ITEMS -->
-                    <li class="primary-nav-item" id="first-li-item">
+                    <li class="primary-nav-items">
                         <a href="#" id="underline">HOME</a>
                     </li>
-                    <li class="primary-nav-item" id="second-li-item">
+                    <li class="primary-nav-items">
                         <a href="#">ABOUT ME</a>
                     </li>
-                    <li class="primary-nav-item" id="third-li-item">
+                    <li class="primary-nav-items">
                         <a href="#">BLOG</a>
                     </li>
-                    <li class="primary-nav-item" id="fourth-li-item">
+                    <li class="primary-nav-items">
                         <a href="#">CONTACT</a>
                     </li>
 
                     <!-- SEARCH ELEMENT -->
                     <li id="search">
-                        <div class="flex-items-center p-relative" id="search-form" >
-                            <input type="search" class="" id="search-input">
+                        <div class="flex-items-center p-relative" id="search-form">
+                            <input type="search" class="opacity-0" id="search-input">
                             <button type="submit" class="p-absolute c-pointer" id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-                            <i class="fa-solid fa-x c-pointer" id="close-btn"></i>
+                            <i class="fa-solid fa-x c-pointer opacity-0" id="close-btn"></i>
                         </div>
                     </li>
 
@@ -50,7 +50,8 @@
                     <li class="p-relative" id="dropdown">
                         
                         <!--Dropdown User Button-->
-                        <i class="fa-solid fa-user" id="user-dropdown-icon">
+                        <i class="fa-solid fa-user" id="user-dropdown-icon"></i>
+
                             <ul class="p-absolute d-none" id="dropdown-container">
                                 <div class="box-shadow-5-03" id="dropdown-items-wrap">
                                     <li class="dropdown-li-item">
@@ -67,8 +68,6 @@
                                     </li>
                                 </div>
                             </ul>
-                        </i>
-
                     </li>
                 </ul>
             </nav>

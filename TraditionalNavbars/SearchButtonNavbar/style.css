@@ -47,6 +47,10 @@ html, li, a {
     text-decoration: underline;
 }
 
+.opacity-0 {
+    opacity: 0;
+}
+
 /* ----------------- G L O B A L - T A G S ----------------- */
 
 /* ----------------- H E A D E R ----------------- */
@@ -54,10 +58,6 @@ html, li, a {
 header {
     justify-content: space-around;
     padding: 2rem 2rem;
-}
-
-nav ul {
-    justify-content: center;
 }
 
 nav ul li {
@@ -71,48 +71,64 @@ nav ul li a {
 /* S E A R C H - I N P U T - B U T T O N - S T Y L I N G */
 
 /* Input and buttons styling */
-
 #search-input {
-    display: none;
+    visibility: hidden;
     width: 0;
+    height: 25px;
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    border-right: none;
+    border-left: none;
+    transition: width 0.5s ease-in-out, opacity 0.1s ease-in-out, visibility 0.1s ease-in-out;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 #search-input:focus {
     outline: 1px solid rgba(0, 0, 0, 0.8);
-    width: 250px;
-    transition: width 1s;
 }
 
 #search-btn {
     border: none;
     background-color: transparent;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    transition: right 0.5s ease-in-out;
 }
 
 #close-btn {
-    display: none;
+    visibility: hidden;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    transition: opacity 0.01s ease-in-out, visibility 0.01s ease-in-out;
 }
 /* Input and buttons styling */
 
 /* Input and buttons active cases */
 #search-input.active {
-    display: flex;
-    width: 250px;
-    height: 25px;
+    opacity: 1;
+    visibility: visible;
+    width: 20.55rem;
     padding: 0.3rem 2rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.3);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-    border-right: none;
-    border-left: none;
 }
 
 #search-btn.active {
-    float: left;
+    right: 18.9875rem;
     padding: 0 0.3rem;
     border-right: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 #close-btn.active {
-    display: flex;
+    opacity: 1;
+    visibility: visible;
     margin: 0 0 0 0.3rem;
     padding: 0 0.2rem;
 }
@@ -138,8 +154,8 @@ nav ul li a {
 }
 
 .dropdown-li-item {
-    margin: auto;
     padding: 1rem 1rem;
+    margin: auto;
 }
 
 /* H A M B U R G E R - M E N U - B U T T O N - S T Y L I N G */
@@ -184,8 +200,11 @@ nav ul li a {
 
 /* M E D I A - Q U E R Y - R E S P O N S I V E - D E S I G N */
 
+
+
 @media (max-width: 768px) {
-    
+
+    /* nav tag responsive styling */
     #navigation {
         position: fixed;
         display: flex;
@@ -209,29 +228,65 @@ nav ul li a {
         -webkit-transform: translateX(0);
         -moz-transform: translateX(0);
     }
-    
-    #navigation ul {
-        display: block;
-        margin: 2rem 2rem;
-    }
 
-    #navigation ul li {
-        margin: 1rem 1rem;
+    /* ul tag responsive styling */
+    #parent {
+        display: block;
+        margin: 1rem 3rem;
+    }
+    
+    /* primary li items responsive styling */
+    .primary-nav-items {
+        margin: 1.5rem 1rem;
     }
 
     #navigation ul li a {
         font-size: 1em;
     }
+    
+    /* search li tag responsive styling */
+    #search-form {
+        position: absolute;
+        bottom: 3rem;
+        left: 4rem;
+    }
 
+    #close-btn {
+        display: none !important;
+    }
+
+    /* dropdown li tag responsive styling */
+
+    #dropdown {
+        margin: 1rem 0 0 1rem;
+    }
+    
     #user-dropdown-icon {
         display: none;
     }
 
     #dropdown-container {
-        display: flex;
-        z-index: 999;
+        position: static;
+        display: block;
     }
 
+    #dropdown-items-wrap {
+        width: 100%;
+        margin: 0;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .dropdown-li-item {
+        padding: 0.8rem 0;
+        margin: 0;
+    }
+
+    .dropdown-li-item i {
+        display: none;
+    }
+
+    /* hamburger menu button i tag responsive styling */
     #menu-btn {
         display: flex;
         height: 30px;
@@ -257,6 +312,18 @@ nav ul li a {
         -moz-transform: translateY(-8px) rotate(45deg);
     }
     
+}
+
+@media (max-width: 475px) {
+
+    #parent {
+        margin: 1rem 2rem;
+    }
+
+    #search-form {
+        left: 50%;
+        transform: translateX(-50%);
+    }
 }
 
 /* M E D I A - Q U E R Y - R E S P O N S I V E - D E S I G N */
