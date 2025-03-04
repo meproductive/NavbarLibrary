@@ -43,10 +43,6 @@ html, li, a {
     display: none;
 }
 
-#underline {
-    text-decoration: underline;
-}
-
 .opacity-0 {
     opacity: 0;
 }
@@ -61,26 +57,53 @@ header {
 }
 
 nav ul li {
-    margin: 0 1rem;
+    padding: 0 1rem;
 }
 
 nav ul li a {
     font-size: 0.8em;
 }
 
+.primary-nav-items:nth-last-child(3) {
+    border-right: 1px solid rgba(0, 0, 0, 0.3); /*giving border to last item of primary nav item's li for seperation*/
+}
+
+/* P R I M A R Y - L I - I T E M S - H O V E R - T R A N S F O R M - T R A N S I T I O N */
+.primary-a-items {
+    position: relative;
+}
+
+.primary-a-items::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    width: 100%;
+    height: 0.5px; 
+    background-color: #000;
+    transform-origin: right;
+    transform: scaleX(0); /* Starts with no underline */
+    transition: transform 0.3s ease-in-out
+}
+
+.primary-a-items:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+/* P R I M A R Y - L I - I T E M S - H O V E R - T R A N S F O R M - T R A N S I T I O N */
+
 /* S E A R C H - I N P U T - B U T T O N - S T Y L I N G */
 
 /* Input and buttons styling */
 #search-input {
+    position: absolute;
     visibility: hidden;
-    width: 0;
     height: 25px;
     border-top: 1px solid rgba(0, 0, 0, 0.3);
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     border-right: none;
     border-left: none;
     transition: width 0.5s ease-in-out, opacity 0.1s ease-in-out, visibility 0.1s ease-in-out;
-    position: absolute;
     right: 0;
     top: 50%;
     transform: translateY(-50%);
@@ -116,12 +139,12 @@ nav ul li a {
 #search-input.active {
     opacity: 1;
     visibility: visible;
-    width: 20.55rem;
+    width: 100%;
     padding: 0.3rem 2rem;
 }
 
 #search-btn.active {
-    right: 18.9875rem;
+    right: 19.8875rem;
     padding: 0 0.3rem;
     border-right: 1px solid rgba(0, 0, 0, 0.3);
 }
@@ -139,7 +162,7 @@ nav ul li a {
 /* D R O P D O W N - U S E R - I C O N - S T Y L I N G */
 
 #dropdown-container {
-    left: -3rem;
+    left: -2rem;
 }
 
 #dropdown:hover #dropdown-container {
@@ -155,7 +178,11 @@ nav ul li a {
 
 .dropdown-li-item {
     padding: 1rem 1rem;
-    margin: auto;
+    border-radius: 5px;
+}
+
+.dropdown-li-item:hover {
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 /* H A M B U R G E R - M E N U - B U T T O N - S T Y L I N G */
@@ -231,8 +258,10 @@ nav ul li a {
 
     /* ul tag responsive styling */
     #parent {
+        position: relative;
         display: block;
         margin: 1rem 3rem;
+        height: 100%;
     }
     
     /* primary li items responsive styling */
@@ -240,16 +269,42 @@ nav ul li a {
         margin: 1.5rem 1rem;
     }
 
+    .primary-nav-items:nth-last-child(3) {
+        border-right: none;
+    }
+
+    .primary-a-items:hover::after {
+        content: none;
+    }
+
     #navigation ul li a {
         font-size: 1em;
     }
     
-    /* search li tag responsive styling */
-    #search-form {
+    /* search li tag responsive styling */  
+    #search {
+        display: flex;
         position: absolute;
         bottom: 3rem;
-        left: 4rem;
+        height: 25px;
+        width: 100%;
+        padding: 0;
     }
+
+    #search-form {
+        width: 21.40rem;
+    }
+
+    #search-input {
+        margin: auto;
+    }
+
+    #search-btn {
+        position: relative;
+        left: 0;
+        top: 45%;
+        transform: translateY(-55%);
+   }
 
     #close-btn {
         display: none !important;
@@ -280,6 +335,10 @@ nav ul li a {
     .dropdown-li-item {
         padding: 0.8rem 0;
         margin: 0;
+    }
+
+    .dropdown-li-item:hover {
+        background: none;
     }
 
     .dropdown-li-item i {
@@ -316,14 +375,7 @@ nav ul li a {
 
 @media (max-width: 475px) {
 
-    #parent {
-        margin: 1rem 2rem;
-    }
 
-    #search-form {
-        left: 50%;
-        transform: translateX(-50%);
-    }
 }
 
 /* M E D I A - Q U E R Y - R E S P O N S I V E - D E S I G N */
