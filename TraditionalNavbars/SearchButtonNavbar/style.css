@@ -43,8 +43,19 @@ html, li, a {
     display: none;
 }
 
-.opacity-0 {
+/* Global visibility, opacity styling for search input and close(x) button */
+.opacity-0-visibility-hid {  /* before search button is clicked both items are not visible */
     opacity: 0;
+    visibility: hidden; 
+}
+
+/* Global styling for positioning search elements on y axis and aligned to the right */
+.position-center-y-right-0 {
+    top: 50%; /* move element down by 50% of the parent's height */
+    right: 0; /* align element to the right edge of the parent */
+    transform: translateY(-50%); /* adjust for vertical centering */
+    -webkit-transform: translateY(-50%); /* Safari support (in a case, it might be removed) */
+    -moz-transform: translateY(-50%); /* Firefox support (in a case, it might be removed) */
 }
 
 /* ----------------- G L O B A L - T A G S ----------------- */
@@ -65,7 +76,7 @@ nav ul li a {
 }
 
 .primary-nav-items:nth-last-child(3) {
-    border-right: 1px solid rgba(0, 0, 0, 0.3); /*giving border to last item of primary nav item's li for seperation*/
+    border-right: 1px solid rgba(0, 0, 0, 0.3); /* giving border to primary nav item's last li item for seperation */
 }
 
 /* P R I M A R Y - L I - I T E M S - H O V E R - T R A N S F O R M - T R A N S I T I O N */
@@ -82,7 +93,7 @@ nav ul li a {
     height: 0.5px; 
     background-color: #000;
     transform-origin: right;
-    transform: scaleX(0); /* Starts with no underline */
+    transform: scaleX(0); /* starts with no underline */
     transition: transform 0.3s ease-in-out
 }
 
@@ -96,17 +107,13 @@ nav ul li a {
 
 /* Input and buttons styling */
 #search-input {
-    position: absolute;
-    visibility: hidden;
+    width: 0; /* Initial width set to 0 to allow smooth width expansion animation. */
     height: 25px;
     border-top: 1px solid rgba(0, 0, 0, 0.3);
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     border-right: none;
     border-left: none;
     transition: width 0.5s ease-in-out, opacity 0.1s ease-in-out, visibility 0.1s ease-in-out;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
 }
 
 #search-input:focus {
@@ -114,32 +121,25 @@ nav ul li a {
 }
 
 #search-btn {
+    transition: right 0.5s ease-in-out;
     border: none;
     background-color: transparent;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1;
-    transition: right 0.5s ease-in-out;
 }
 
 #close-btn {
-    visibility: hidden;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1;
     transition: opacity 0.01s ease-in-out, visibility 0.01s ease-in-out;
 }
 /* Input and buttons styling */
 
-/* Input and buttons active cases */
-#search-input.active {
-    opacity: 1;
+/* Input and buttons active clases */
+#search-input.active,
+#close-btn.active { /* after search button is clicked both items are visible */
+    opacity: 1; 
     visibility: visible;
-    width: 100%;
+}
+
+#search-input.active {
+    width: 100%; /* JavaScript (`openSearchinput`) function sets search form(`wrappers`) width to 21.40rem on search button click. */
     padding: 0.3rem 2rem;
 }
 
@@ -150,12 +150,10 @@ nav ul li a {
 }
 
 #close-btn.active {
-    opacity: 1;
-    visibility: visible;
     margin: 0 0 0 0.3rem;
     padding: 0 0.2rem;
 }
-/* Input and buttons active cases */
+/* Input and buttons active clases */
 
 /* S E A R C H - I N P U T - B U T T O N - S T Y L I N G */
 
@@ -209,14 +207,14 @@ nav ul li a {
     -moz-transition: transform 0.3s;
 }
 
-/* Button's First Line&Style */
+/* Button's First Line Styling */
 #hamburger-btn::before {
     top: -8px;
     width: 30px;
     height: 0.1875rem;
 }
 
-/* Button's Last Line&Style */
+/* Button's Last Line Styling */
 #hamburger-btn::after {
     bottom: -8px;
     width: 30px;
@@ -227,14 +225,11 @@ nav ul li a {
 
 /* M E D I A - Q U E R Y - R E S P O N S I V E - D E S I G N */
 
-
-
 @media (max-width: 768px) {
 
     /* nav tag responsive styling */
     #navigation {
         position: fixed;
-        display: flex;
         flex-direction: column;
         top: 0;
         right: -70%;
@@ -256,6 +251,10 @@ nav ul li a {
         -moz-transform: translateX(0);
     }
 
+    nav ul li {
+        padding: 0;
+    }
+
     /* ul tag responsive styling */
     #parent {
         position: relative;
@@ -264,7 +263,7 @@ nav ul li a {
         height: 100%;
     }
     
-    /* primary li items responsive styling */
+    /* Primary li items responsive styling */
     .primary-nav-items {
         margin: 1.5rem 1rem;
     }
@@ -281,7 +280,7 @@ nav ul li a {
         font-size: 1em;
     }
     
-    /* search li tag responsive styling */  
+    /* Search li tag responsive styling */  
     #search {
         display: flex;
         position: absolute;
@@ -293,10 +292,7 @@ nav ul li a {
 
     #search-form {
         width: 21.40rem;
-    }
-
-    #search-input {
-        margin: auto;
+        margin: 0rem 1rem;
     }
 
     #search-btn {
@@ -310,8 +306,7 @@ nav ul li a {
         display: none !important;
     }
 
-    /* dropdown li tag responsive styling */
-
+    /* Dropdown li tag responsive styling */
     #dropdown {
         margin: 1rem 0 0 1rem;
     }
@@ -345,7 +340,7 @@ nav ul li a {
         display: none;
     }
 
-    /* hamburger menu button i tag responsive styling */
+    /* Hamburger menu button i tag responsive styling */
     #menu-btn {
         display: flex;
         height: 30px;
@@ -374,8 +369,9 @@ nav ul li a {
 }
 
 @media (max-width: 475px) {
-
-
+    #parent {
+        margin: 1rem 1rem;
+    }
 }
 
 /* M E D I A - Q U E R Y - R E S P O N S I V E - D E S I G N */

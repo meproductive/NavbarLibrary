@@ -39,11 +39,15 @@
 
                     <!-- SEARCH ELEMENT -->
                     <li id="search">
+
                         <div class="p-relative" id="search-form">
-                            <input type="search" class="opacity-0" id="search-input">
-                            <button type="submit" class="p-absolute c-pointer" id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-                            <i class="fa-solid fa-x c-pointer opacity-0" id="close-btn"></i>
+
+                            <input type="search" class="p-absolute opacity-0-visibility-hid position-center-y-right-0" id="search-input">
+                            <button type="submit" class="p-absolute c-pointer position-center-y-right-0" id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            <i class="fa-solid fa-x p-absolute c-pointer opacity-0-visibility-hid position-center-y-right-0" id="close-btn"></i>
+                            
                         </div>
+
                     </li>
 
                     <!-- DROPDOWN ELEMENT -->
@@ -53,24 +57,31 @@
                         <i class="fa-solid fa-user" id="user-dropdown-icon"></i>
 
                             <ul class="p-absolute d-none" id="dropdown-container">
+
                                 <div class="box-shadow-5-03" id="dropdown-items-wrap">
+
                                     <li class="dropdown-li-item">
                                         <a href="#">
                                             <i class="fa-solid fa-user-plus" ></i>
                                             SIGN UP
                                         </a>
                                     </li>
+
                                     <li class="dropdown-li-item">
                                         <a href="#">
                                             <i class="fa-solid fa-right-to-bracket"></i>
                                             LOG IN
                                         </a>
                                     </li>
+
                                 </div>
+
                             </ul>
                     </li>
+                    
                 </ul>
             </nav>
+
             <!-- H A M B U R G E R - M E N U - B U T T O N -->
             <i class="d-none" id="menu-btn" ><span class="p-relative" id="hamburger-btn"></span></i>
         </header>
