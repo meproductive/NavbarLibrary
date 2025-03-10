@@ -87,14 +87,14 @@ nav ul li a {
 .primary-a-items::after {
     content: '';
     position: absolute;
-    left: 0;
+    left: 0; /* adjust position ::after pseudo-element at parent's left edge. */
     bottom: 1px;
-    width: 100%;
+    width: 100%; /* set ::after pseudo-element width to match parent for smooth animation. */
     height: 0.5px; 
-    background-color: #000;
+    background-color: #000000;
     transform-origin: right;
     transform: scaleX(0); /* starts with no underline */
-    transition: transform 0.3s ease-in-out
+    transition: transform 0.3s ease-in-out;
 }
 
 .primary-a-items:hover::after {
@@ -108,7 +108,7 @@ nav ul li a {
 /* Input and buttons styling */
 #search-input {
     width: 0; /* Initial width set to 0 to allow smooth width expansion animation. */
-    height: 25px;
+    height: 1.6rem;
     border-top: 1px solid rgba(0, 0, 0, 0.3);
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     border-right: none;
@@ -131,7 +131,7 @@ nav ul li a {
 }
 /* Input and buttons styling */
 
-/* Input and buttons active clases */
+/* Input and buttons active classes */
 #search-input.active,
 #close-btn.active { /* after search button is clicked both items are visible */
     opacity: 1; 
@@ -153,14 +153,14 @@ nav ul li a {
     margin: 0 0 0 0.3rem;
     padding: 0 0.2rem;
 }
-/* Input and buttons active clases */
+/* Input and buttons active classes */
 
 /* S E A R C H - I N P U T - B U T T O N - S T Y L I N G */
 
 /* D R O P D O W N - U S E R - I C O N - S T Y L I N G */
 
 #dropdown-container {
-    left: -2rem;
+    left: -2.3rem;
 }
 
 #dropdown:hover #dropdown-container {
@@ -168,7 +168,7 @@ nav ul li a {
 }
 
 #dropdown-items-wrap {
-    width: 120px;
+    width: 7.5rem;
     margin: 1rem 0 0 0;
     background-color: rgba(251, 251, 251, 0.9);
     border-radius: 5px;
@@ -191,7 +191,7 @@ nav ul li a {
 
 /* Button's Middle Line */
 #hamburger-btn {
-    width: 30px;
+    width: 1.85rem;
     height: 0.1875rem;
     background-color: rgba(0, 0, 0, 0.8);
 }
@@ -209,15 +209,15 @@ nav ul li a {
 
 /* Button's First Line Styling */
 #hamburger-btn::before {
-    top: -8px;
-    width: 30px;
+    top: -0.5rem;
+    width: 1.85rem;
     height: 0.1875rem;
 }
 
 /* Button's Last Line Styling */
 #hamburger-btn::after {
-    bottom: -8px;
-    width: 30px;
+    bottom: -0.5rem;
+    width: 1.85rem;
     height: 0.1875rem;
 }
 
@@ -229,10 +229,10 @@ nav ul li a {
 
     /* nav tag responsive styling */
     #navigation {
-        position: fixed;
+        position: fixed; /* sets navbar's final position before active class. */
         flex-direction: column;
         top: 0;
-        right: -70%;
+        right: -100%;  /* positioning box outside the right edge of the viewport. */
         height: 100%;
         transform: translateX(100%);
         -webkit-transform: translateX(100%);
@@ -244,8 +244,8 @@ nav ul li a {
     }
 
     #navigation.active {
-        left: 0;
-        width: 100%;
+        left: 0; /* repositioning(adjust) the box left. */
+        width: 100%; /* sets width full for responsiveness */
         transform: translateX(0);
         -webkit-transform: translateX(0);
         -moz-transform: translateX(0);
@@ -253,6 +253,10 @@ nav ul li a {
 
     nav ul li {
         padding: 0;
+    }
+
+    nav ul li a {
+        font-size: 1em;
     }
 
     /* ul tag responsive styling */
@@ -275,17 +279,12 @@ nav ul li a {
     .primary-a-items:hover::after {
         content: none;
     }
-
-    #navigation ul li a {
-        font-size: 1em;
-    }
     
     /* Search li tag responsive styling */  
     #search {
         display: flex;
         position: absolute;
         bottom: 3rem;
-        height: 25px;
         width: 100%;
         padding: 0;
     }
@@ -343,8 +342,9 @@ nav ul li a {
     /* Hamburger menu button i tag responsive styling */
     #menu-btn {
         display: flex;
-        height: 30px;
+        height: 1.85rem;
         cursor: pointer;
+        pointer-events: all;
     }
 
     /* Button's Middle Line Transparent Style */

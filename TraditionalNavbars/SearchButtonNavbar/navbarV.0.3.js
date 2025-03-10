@@ -2,7 +2,7 @@
 const navigation = document.getElementById('navigation');
 const menubtn = document.getElementById('menu-btn');
 
-    // Function declaration ES6+
+    // Responsive hamburger menu button function declaration ES6+
     const hamburgerMenu = () => {
         //defining classList 'active' to toggle token
         navigation.classList.toggle('active');
@@ -12,7 +12,7 @@ const menubtn = document.getElementById('menu-btn');
   // EVENTLISTENER on click function
   menubtn.addEventListener('click', hamburgerMenu);
 
- // Buttons's & input's dom declarations
+ // Search elements' dom declarations
  const searchbtn = document.getElementById('search-btn');
  const closebtn = document.getElementById('close-btn');
  const searchinput = document.getElementById('search-input');
@@ -44,6 +44,9 @@ const menubtn = document.getElementById('menu-btn');
 
     };
 
+    // EVENTLISTENER on click function
+    searchbtn.addEventListener('click', openSearchinput);
+
     // Function declaration ES6+ to close searchinput
     const closeSearchinput = () => {
         //removing classList 'active' with remove token on click function
@@ -60,6 +63,9 @@ const menubtn = document.getElementById('menu-btn');
         }
         
     };
+
+    // EVENTLISTENER on click function
+    closebtn.addEventListener('click', closeSearchinput);
     
     // Function to handle screen resize
     const handleResize = () => {
@@ -85,10 +91,6 @@ const menubtn = document.getElementById('menu-btn');
 
     };
 
-    // EVENTLISTENER on click functions
-    searchbtn.addEventListener('click', openSearchinput);
-    closebtn.addEventListener('click', closeSearchinput);
-
     // Add resize EVENTLISTENER to handle screen size changes
     window.addEventListener('resize', handleResize);
 
@@ -96,7 +98,7 @@ const menubtn = document.getElementById('menu-btn');
     window.addEventListener('load', () => {
         //If screen size is less than 768px when page loads prevents unwanted behaviour
         if (!responsive.matches) {
-            //keeps search input and search button open
+            //keeping only search input and search button open
             searchinput.classList.add('active');
             searchbtn.classList.add('active');
             
